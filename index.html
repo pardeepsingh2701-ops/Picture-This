@@ -1,54 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<picture>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Picture This!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <!-- This image set is used on screens 1600px and wider. -->
+  <source
+    media="(min-width: 1600px)"
+    srcset="
+      images/museum-square-800.jpg 1x,
+      images/museum-square-1600.jpg 2x,
+      images/museum-square-2400.jpg 3x
+    ">
 
-<body>
-  <header class="header">
-    <div class="title">
-      <h1>Picture This!</h1>
-      <h4>My Really Cool Blog Post</h4>
-    </div>
+  <!-- This image set is used from 1280px up to 1599px. -->
+  <source
+    media="(min-width: 1280px)"
+    srcset="
+      images/museum-square-640.jpg 1x,
+      images/museum-square-1280.jpg 2x,
+      images/museum-square-1920.jpg 3x
+    ">
 
-    <picture>
+  <!-- The layout changes to the square image starting at 960px. -->
+  <source
+    media="(min-width: 960px)"
+    srcset="
+      images/museum-square-480.jpg 1x,
+      images/museum-square-960.jpg 2x,
+      images/museum-square-1440.jpg 3x
+    ">
 
-      <!-- This image set is used on larger mobile and tablet screens. -->
-      <source
-        media="(min-width: 720px)"
-        srcset="
-          images/museum-landscape-720.jpg 1x,
-          images/museum-landscape-1440.jpg 2x,
-          images/museum-landscape-2160.jpg 3x
-        ">
+  <!-- Landscape images are used below 960px. -->
+  <source
+    media="(min-width: 720px)"
+    srcset="
+      images/museum-landscape-720.jpg 1x,
+      images/museum-landscape-1440.jpg 2x,
+      images/museum-landscape-2160.jpg 3x
+    ">
 
-      <!-- This image set is used on medium sized screens. -->
-      <source
-        media="(min-width: 480px)"
-        srcset="
-          images/museum-landscape-480.jpg 1x,
-          images/museum-landscape-960.jpg 2x,
-          images/museum-landscape-1440.jpg 3x
-        ">
+  <!-- Medium screens use the 480px landscape image set. -->
+  <source
+    media="(min-width: 480px)"
+    srcset="
+      images/museum-landscape-480.jpg 1x,
+      images/museum-landscape-960.jpg 2x,
+      images/museum-landscape-1440.jpg 3x
+    ">
 
-      <!-- The img tag is the fallback for the smallest screens. -->
-      <img
-        src="images/museum-landscape-320.jpg"
-        srcset="
-          images/museum-landscape-320.jpg 1x,
-          images/museum-landscape-640.jpg 2x,
-          images/museum-landscape-960.jpg 3x
-        "
-        alt="Museum building">
+  <!-- The smallest screens use this image set. -->
+  <img
+    src="images/museum-landscape-320.jpg"
+    srcset="
+      images/museum-landscape-320.jpg 1x,
+      images/museum-landscape-640.jpg 2x,
+      images/museum-landscape-960.jpg 3x
+    "
+    alt="Museum building">
 
-    </picture>
-
-  </header>
-</body>
-
-</html>
+</picture>

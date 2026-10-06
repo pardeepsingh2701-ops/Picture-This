@@ -29,12 +29,14 @@ h4 {
   font-weight: 300;
 }
 
+/* The image fills the available space on smaller screens. */
 img {
   display: block;
   width: 100%;
   height: auto;
 }
 
+/* The page changes to two columns starting at 960px. */
 @media (min-width: 960px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
