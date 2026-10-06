@@ -1,58 +1,93 @@
-<picture>
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- This image set is used on screens 1600px and wider. -->
-  <source
-    media="(min-width: 1600px)"
-    srcset="
-      images/museum-square-800.jpg 1x,
-      images/museum-square-1600.jpg 2x,
-      images/museum-square-2400.jpg 3x
-    ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Picture This!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <!-- This image set is used from 1280px up to 1599px. -->
-  <source
-    media="(min-width: 1280px)"
-    srcset="
-      images/museum-square-640.jpg 1x,
-      images/museum-square-1280.jpg 2x,
-      images/museum-square-1920.jpg 3x
-    ">
+<body>
+  <!--
+I used AI to help me understand how picture, source, media and srcset
+work together. I used that explanation to build and test my responsive
+image setup.
+-->
 
-  <!-- The layout changes to the square image starting at 960px. -->
-  <source
-    media="(min-width: 960px)"
-    srcset="
-      images/museum-square-480.jpg 1x,
-      images/museum-square-960.jpg 2x,
-      images/museum-square-1440.jpg 3x
-    ">
+  <header class="header">
 
-  <!-- Landscape images are used below 960px. -->
-  <source
-    media="(min-width: 720px)"
-    srcset="
-      images/museum-landscape-720.jpg 1x,
-      images/museum-landscape-1440.jpg 2x,
-      images/museum-landscape-2160.jpg 3x
-    ">
+    <div class="title">
+      <h1>Picture This!</h1>
+      <h4>My Really Cool Blog Post</h4>
+    </div>
 
-  <!-- Medium screens use the 480px landscape image set. -->
-  <source
-    media="(min-width: 480px)"
-    srcset="
-      images/museum-landscape-480.jpg 1x,
-      images/museum-landscape-960.jpg 2x,
-      images/museum-landscape-1440.jpg 3x
-    ">
+    <!--
+      The source tags are ordered from the largest screen size
+      to the smallest. The browser uses the first one that matches.
+    -->
+    <picture>
 
-  <!-- The smallest screens use this image set. -->
-  <img
-    src="images/museum-landscape-320.jpg"
-    srcset="
-      images/museum-landscape-320.jpg 1x,
-      images/museum-landscape-640.jpg 2x,
-      images/museum-landscape-960.jpg 3x
-    "
-    alt="Museum building">
+      <!-- Square image for screens 1600px and wider. -->
+      <source
+        media="(min-width: 1600px)"
+        srcset="
+          images/museum-square-800.jpg 1x,
+          images/museum-square-1600.jpg 2x,
+          images/museum-square-2400.jpg 3x
+        ">
 
-</picture>
+      <!-- Square image for screens starting at 1280px. -->
+      <source
+        media="(min-width: 1280px)"
+        srcset="
+          images/museum-square-640.jpg 1x,
+          images/museum-square-1280.jpg 2x,
+          images/museum-square-1920.jpg 3x
+        ">
+
+      <!-- The image changes from landscape to square at 960px. -->
+      <source
+        media="(min-width: 960px)"
+        srcset="
+          images/museum-square-480.jpg 1x,
+          images/museum-square-960.jpg 2x,
+          images/museum-square-1440.jpg 3x
+        ">
+
+      <!-- Landscape image for screens starting at 720px. -->
+      <source
+        media="(min-width: 720px)"
+        srcset="
+          images/museum-landscape-720.jpg 1x,
+          images/museum-landscape-1440.jpg 2x,
+          images/museum-landscape-2160.jpg 3x
+        ">
+
+      <!-- Landscape image for screens starting at 480px. -->
+      <source
+        media="(min-width: 480px)"
+        srcset="
+          images/museum-landscape-480.jpg 1x,
+          images/museum-landscape-960.jpg 2x,
+          images/museum-landscape-1440.jpg 3x
+        ">
+
+      <!-- This is the fallback image for screens smaller than 480px. -->
+      <img
+        src="images/museum-landscape-320.jpg"
+        srcset="
+          images/museum-landscape-320.jpg 1x,
+          images/museum-landscape-640.jpg 2x,
+          images/museum-landscape-960.jpg 3x
+        "
+        alt="Exterior of a museum building">
+
+    </picture>
+
+  </header>
+
+</body>
+
+</html>
