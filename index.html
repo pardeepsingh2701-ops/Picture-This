@@ -16,8 +16,37 @@
       <h4>My Really Cool Blog Post</h4>
     </div>
 
-    <!-- This is the smaller version of the original image. -->
-    <img src="images/museum-landscape-320.jpg" alt="Museum building">
+    <picture>
+
+      <!-- This image set is used on larger mobile and tablet screens. -->
+      <source
+        media="(min-width: 720px)"
+        srcset="
+          images/museum-landscape-720.jpg 1x,
+          images/museum-landscape-1440.jpg 2x,
+          images/museum-landscape-2160.jpg 3x
+        ">
+
+      <!-- This image set is used on medium sized screens. -->
+      <source
+        media="(min-width: 480px)"
+        srcset="
+          images/museum-landscape-480.jpg 1x,
+          images/museum-landscape-960.jpg 2x,
+          images/museum-landscape-1440.jpg 3x
+        ">
+
+      <!-- The img tag is the fallback for the smallest screens. -->
+      <img
+        src="images/museum-landscape-320.jpg"
+        srcset="
+          images/museum-landscape-320.jpg 1x,
+          images/museum-landscape-640.jpg 2x,
+          images/museum-landscape-960.jpg 3x
+        "
+        alt="Museum building">
+
+    </picture>
 
   </header>
 </body>
